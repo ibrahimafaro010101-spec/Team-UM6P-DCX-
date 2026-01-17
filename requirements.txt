@@ -34,8 +34,8 @@ seaborn>=0.12.0
 streamlit>=1.28.0
 
 # Utilitaires
-python-dateutil>=2.8.2
-pytz>=2023.3wn
+#python-dateutil>=2.8.2
+#pytz>=2023.3wn
 
 
 joblib
@@ -45,4 +45,5 @@ imbalanced-learn
 catboost
 xgboost
 markdo
+
 
