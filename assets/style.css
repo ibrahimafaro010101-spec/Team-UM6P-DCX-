@@ -1,0 +1,171 @@
+/* =====================================================
+   LIK Insurance Analyst - ELITE ARCHITECT CSS
+   ===================================================== */
+
+@import url('https://rsms.me/inter/inter.css');
+
+:root {
+  /* Design Tokens - Palette Neutre Sophistiquée */
+  --slate-50:  #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-400: #94a3b8;
+  --slate-800: #1e293b;
+  --slate-950: #020617;
+
+  /* Branding Blue (Fintech Gradient) */
+  --brand-primary: #2563eb;
+  --brand-secondary: #3b82f6;
+  --brand-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+
+  /* Sémantique */
+  --success-bg: #f0fdf4; --success-text: #166534;
+  --error-bg: #fef2f2;   --error-text: #991b1b;
+
+  /* Systèmes d'ombres (Layering) */
+  --shadow-flat: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-raised: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-overlay: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* Radius & Curves */
+  --radius-full: 9999px;
+  --radius-xl: 1rem;
+  --bezier: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. ARCHITECTURE DE L'APPLICATION */
+.stApp {
+  background: radial-gradient(at 0% 0%, hsla(214,100%,98%,1) 0, transparent 50%),
+              radial-gradient(at 100% 0%, hsla(210,100%,97%,1) 0, transparent 50%);
+  color: var(--slate-800);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11"; /* Inter Features */
+}
+
+/* 2. HEADER & BRANDING */
+.main-header {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.5rem;
+}
+
+/* 3. CARTES ANALYTIQUES (Expert) */
+[data-testid="stMetric"] {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: var(--shadow-raised) !important;
+  border-radius: var(--radius-xl) !important;
+  transition: all 0.3s var(--bezier) !important;
+}
+
+[data-testid="stMetric"]:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--shadow-overlay) !important;
+  background: #ffffff !important;
+}
+
+/* Style spécifique pour les valeurs monétaires/chiffres */
+[data-testid="stMetricValue"] {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums; /* Alignement parfait des chiffres */
+}
+
+/* 4. ÉLÉMENTS DE NAVIGATION (SIDEBAR) */
+[data-testid="stSidebar"] {
+  width: 320px !important;
+  border-right: 1px solid var(--slate-200);
+}
+
+/* Radio Buttons Transformés en Pills de Navigation */
+div[data-testid="stRadio"] > div {
+  background: var(--slate-100);
+  padding: 4px;
+  border-radius: var(--radius-xl);
+  gap: 4px;
+}
+
+div[data-testid="stRadio"] label {
+  background: transparent !important;
+  border: none !important;
+  border-radius: calc(var(--radius-xl) - 4px) !important;
+  transition: all 0.2s var(--bezier);
+}
+
+div[data-testid="stRadio"] label:hover {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+div[data-testid="stRadio"] label[data-selected="true"] {
+  background: white !important;
+  box-shadow: var(--shadow-flat) !important;
+  color: var(--brand-primary) !important;
+  font-weight: 600;
+}
+
+/* 5. FORMULAIRES & INTERACTION */
+button[kind="primary"] {
+  background: var(--brand-gradient) !important;
+  border: none !important;
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3) !important;
+}
+
+button[kind="primary"]:active {
+  transform: scale(0.96);
+}
+
+/* File Uploader (Dropzone Style) */
+[data-testid="stFileUploader"] section {
+  background: var(--slate-50);
+  border: 2px dashed var(--slate-200);
+  border-radius: var(--radius-xl);
+  padding: 3rem !important;
+  transition: border-color 0.3s ease;
+}
+
+[data-testid="stFileUploader"] section:hover {
+  border-color: var(--brand-primary);
+  background: #f0f7ff;
+}
+
+/* 6. DATA TABLES (Premium Look) */
+.stDataFrame {
+  border: none !important;
+  box-shadow: var(--shadow-raised);
+}
+
+/* Custom Alertes Modernes */
+[data-testid="stNotificationContentSuccess"] {
+  background-color: var(--success-bg) !important;
+  color: var(--success-text) !important;
+  border: 1px solid #bcf0da !important;
+  border-left: 5px solid #16a34a !important;
+}
+
+/* 7. LOADING ANIMATION (Skeleton Pulse) */
+@keyframes skeleton-pulse {
+  0% { background-color: var(--slate-100); }
+  50% { background-color: var(--slate-200); }
+  100% { background-color: var(--slate-100); }
+}
+
+.stSpinner > div {
+  border-top-color: var(--brand-primary) !important;
+}
+
+/* 8. RESPONSIVE / CLEANUP */
+@media (max-width: 768px) {
+  [data-testid="stMetric"] {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Masquer les bordures inutiles de Streamlit */
+[data-testid="stHeader"] {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--slate-200);
+}
