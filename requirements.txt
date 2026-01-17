@@ -44,6 +44,7 @@ python-dotenv
 imbalanced-learn
 catboost
 xgboost
-markdo
+markdown
+
 
 
