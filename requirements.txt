@@ -1,50 +1,53 @@
 # requirements.txt
-#streamlit>=1.28.0
-#pandas>=2.0.0
-#numpy>=1.24.0
-#plotly>=5.17.0
-#scikit-learn>=1.3.0
-#joblib>=1.3.0
-#openai>=1.3.0
-#python-dotenv>=1.0.0
-#langchain>=0.0.350
-#langchain-openai>=0.0.5
-#pandasai>=2.0.0
-#matplotlib>=3.7.0
-#seaborn>=0.12.0
 
-# Pour les exports PDF et Word
-reportlab>=4.0.0
-python-docx>=1.1.0
-markdown>=3.5.0
+# Interface principale
+streamlit>=1.28.0
 
-# Traitement de données avancé
-
+# Data manipulation et analyse
 pandas>=2.0.0
 numpy>=1.24.0
-scikit-learn>=1.3.0
 scipy>=1.11.0
 
+# Machine Learning
+scikit-learn>=1.3.0
+imbalanced-learn>=0.11.0
+xgboost>=2.0.0
+catboost>=1.2.0
+lightgbm>=4.1.0
+
+# AI/LLM
+openai>=1.3.0
+langchain>=0.0.350
+langchain-openai>=0.0.5
+pandasai>=2.0.0
+
 # Visualisation
-plotly>=5.0.0
+plotly>=5.17.0
 matplotlib>=3.7.0
 seaborn>=0.12.0
 
-# Interface
-streamlit>=1.28.0
+# Traitement texte et rapports
+markdown>=3.5.0
+reportlab>=4.0.0
+python-docx>=1.1.0
 
-# Utilitaires
-#python-dateutil>=2.8.2
-#pytz>=2023.3wn
+# Utilitaires et environnement
+python-dotenv>=1.0.0
+joblib>=1.3.0
+python-dateutil>=2.8.2
+pytz>=2023.3
 
+# Manipulation de fichiers
+openpyxl>=3.1.0  # pour lire les fichiers Excel
+chardet>=5.2.0   # détection d'encodage
 
-joblib
-openai
-python-dotenv
-imbalanced-learn
-catboost
-xgboost
-markdown
+# Tests et qualité de code (optionnel)
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
 
+# Performances
+numba>=0.58.0
 
-
+# Autres
+tqdm>=4.66.0     # barres de progression
