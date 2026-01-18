@@ -18,6 +18,7 @@ from sklearn.metrics import (
     mean_absolute_percentage_error
 )
 import joblib
+import pytest
 import plotly.graph_objects as go
 import plotly.express as px
 from imblearn.over_sampling import SMOTE
@@ -1352,3 +1353,4 @@ class AdvancedPredictiveEngine:
 def make_subplots(rows=1, cols=1, **kwargs):
     """Crée des subplots avec Plotly"""
     return go.Figure().set_subplots(rows=rows, cols=cols, **kwargs)
+
