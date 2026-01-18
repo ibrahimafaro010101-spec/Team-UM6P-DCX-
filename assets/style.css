@@ -1,171 +1,640 @@
 /* =====================================================
    LIK Insurance Analyst - ELITE ARCHITECT CSS
+   Version Premium - Inspiré de Graphiste.com
    ===================================================== */
 
 @import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* Design Tokens - Palette Neutre Sophistiquée */
   --slate-50:  #f8fafc;
   --slate-100: #f1f5f9;
   --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
   --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
   --slate-800: #1e293b;
+  --slate-900: #0f172a;
   --slate-950: #020617;
 
-  /* Branding Blue (Fintech Gradient) */
+  /* Branding Blue (Fintech Gradient) - Version améliorée */
   --brand-primary: #2563eb;
   --brand-secondary: #3b82f6;
+  --brand-tertiary: #60a5fa;
   --brand-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  --brand-gradient-light: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  --brand-gradient-dark: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
 
-  /* Sémantique */
-  --success-bg: #f0fdf4; --success-text: #166534;
-  --error-bg: #fef2f2;   --error-text: #991b1b;
+  /* Sémantique améliorée */
+  --success-bg: #f0fdf4;
+  --success-text: #166534;
+  --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
 
-  /* Systèmes d'ombres (Layering) */
-  --shadow-flat: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  --shadow-raised: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-overlay: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --error-bg: #fef2f2;
+  --error-text: #991b1b;
+  --error-gradient: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
 
-  /* Radius & Curves */
-  --radius-full: 9999px;
+  --warning-bg: #fffbeb;
+  --warning-text: #92400e;
+  --warning-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+
+  /* Systèmes d'ombres (Layering) amélioré */
+  --shadow-flat: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  --shadow-raised: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-overlay: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.15);
+  --shadow-inset: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* Radius & Curves améliorés */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
   --radius-xl: 1rem;
-  --bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  --bezier-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --bezier-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Typographie améliorée */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
 }
 
-/* 1. ARCHITECTURE DE L'APPLICATION */
+/* Reset et styles de base */
+* {
+  box-sizing: border-box;
+}
+
+/* 1. ARCHITECTURE DE L'APPLICATION - Version Premium */
 .stApp {
-  background: radial-gradient(at 0% 0%, hsla(214,100%,98%,1) 0, transparent 50%),
-              radial-gradient(at 100% 0%, hsla(210,100%,97%,1) 0, transparent 50%);
-  color: var(--slate-800);
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11"; /* Inter Features */
+  background: radial-gradient(ellipse at 80% 20%, hsla(214, 100%, 98%, 0.3) 0, transparent 50%),
+              radial-gradient(ellipse at 20% 80%, hsla(210, 100%, 97%, 0.2) 0, transparent 50%),
+              linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: var(--slate-900);
+  font-family: var(--font-primary);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  min-height: 100vh;
 }
 
-/* 2. HEADER & BRANDING */
+/* Amélioration des conteneurs */
+.main .block-container {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  max-width: 1400px;
+}
+
+/* 2. HEADER & BRANDING - Version Premium */
 .main-header {
+  font-family: var(--font-display);
   font-weight: 800;
-  letter-spacing: -0.04em;
+  font-size: 3.5rem;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
   background: var(--brand-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-bottom: 0.5rem;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
 }
 
-/* 3. CARTES ANALYTIQUES (Expert) */
+.main-header::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--brand-gradient);
+  border-radius: 2px;
+}
+
+/* 3. CARTES ANALYTIQUES (Expert Premium) */
 [data-testid="stMetric"] {
-  background: rgba(255, 255, 255, 0.7) !important;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
   box-shadow: var(--shadow-raised) !important;
   border-radius: var(--radius-xl) !important;
-  transition: all 0.3s var(--bezier) !important;
+  transition: all 0.4s var(--bezier-smooth) !important;
+  padding: 1.5rem !important;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-testid="stMetric"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 [data-testid="stMetric"]:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: var(--shadow-overlay) !important;
-  background: #ffffff !important;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-overlay), var(--shadow-glow) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+
+[data-testid="stMetric"]:hover::before {
+  opacity: 1;
 }
 
 /* Style spécifique pour les valeurs monétaires/chiffres */
 [data-testid="stMetricValue"] {
-  font-family: 'Inter', sans-serif;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums; /* Alignement parfait des chiffres */
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.5rem !important;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
 }
 
-/* 4. ÉLÉMENTS DE NAVIGATION (SIDEBAR) */
+[data-testid="stMetricLabel"] {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  color: var(--slate-700) !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* 4. ÉLÉMENTS DE NAVIGATION (SIDEBAR) - Version Premium */
 [data-testid="stSidebar"] {
   width: 320px !important;
-  border-right: 1px solid var(--slate-200);
+  border-right: 1px solid rgba(226, 232, 240, 0.5);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+  box-shadow: 5px 0 30px rgba(0, 0, 0, 0.03);
 }
 
-/* Radio Buttons Transformés en Pills de Navigation */
+[data-testid="stSidebar"] .sidebar-content {
+  padding: 2rem 1.5rem;
+}
+
+/* Logo dans la sidebar */
+[data-testid="stSidebar"] img {
+  filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.15));
+  transition: transform 0.3s var(--bezier-smooth);
+}
+
+[data-testid="stSidebar"] img:hover {
+  transform: scale(1.05);
+}
+
+/* Radio Buttons Transformés en Pills de Navigation Premium */
 div[data-testid="stRadio"] > div {
-  background: var(--slate-100);
-  padding: 4px;
+  background: linear-gradient(135deg, rgba(241, 245, 249, 0.8) 0%, rgba(226, 232, 240, 0.4) 100%);
+  padding: 6px;
   border-radius: var(--radius-xl);
   gap: 4px;
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  backdrop-filter: blur(10px);
 }
 
 div[data-testid="stRadio"] label {
   background: transparent !important;
   border: none !important;
-  border-radius: calc(var(--radius-xl) - 4px) !important;
-  transition: all 0.2s var(--bezier);
+  border-radius: var(--radius-lg) !important;
+  transition: all 0.3s var(--bezier-smooth);
+  padding: 0.75rem 1.25rem !important;
+  font-weight: 500;
+  color: var(--slate-700) !important;
 }
 
 div[data-testid="stRadio"] label:hover {
-  background: rgba(255, 255, 255, 0.5) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-flat);
 }
 
 div[data-testid="stRadio"] label[data-selected="true"] {
-  background: white !important;
-  box-shadow: var(--shadow-flat) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  box-shadow: var(--shadow-raised) !important;
   color: var(--brand-primary) !important;
   font-weight: 600;
+  border: 1px solid rgba(37, 99, 235, 0.1) !important;
 }
 
-/* 5. FORMULAIRES & INTERACTION */
+/* 5. FORMULAIRES & INTERACTION - Version Premium */
+/* Boutons primaires */
 button[kind="primary"] {
   background: var(--brand-gradient) !important;
   border: none !important;
-  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3) !important;
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3),
+              0 8px 10px -6px rgba(37, 99, 235, 0.2) !important;
+  border-radius: var(--radius-lg) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.3s var(--bezier-smooth) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+button[kind="primary"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+button[kind="primary"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.4),
+              0 10px 15px -6px rgba(37, 99, 235, 0.3) !important;
+}
+
+button[kind="primary"]:hover::before {
+  left: 100%;
 }
 
 button[kind="primary"]:active {
-  transform: scale(0.96);
+  transform: translateY(0) scale(0.98);
 }
 
-/* File Uploader (Dropzone Style) */
+/* Boutons secondaires */
+button[kind="secondary"] {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid var(--slate-200) !important;
+  color: var(--slate-700) !important;
+  border-radius: var(--radius-lg) !important;
+  font-weight: 500 !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.3s var(--bezier-smooth) !important;
+}
+
+button[kind="secondary"]:hover {
+  border-color: var(--brand-primary) !important;
+  color: var(--brand-primary) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-flat);
+}
+
+/* File Uploader (Dropzone Premium) */
 [data-testid="stFileUploader"] section {
-  background: var(--slate-50);
-  border: 2px dashed var(--slate-200);
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%);
+  border: 2px dashed var(--slate-300);
   border-radius: var(--radius-xl);
   padding: 3rem !important;
-  transition: border-color 0.3s ease;
+  transition: all 0.4s var(--bezier-smooth);
+  backdrop-filter: blur(8px);
 }
 
 [data-testid="stFileUploader"] section:hover {
   border-color: var(--brand-primary);
-  background: #f0f7ff;
+  background: linear-gradient(135deg, rgba(240, 247, 255, 0.9) 0%, rgba(224, 242, 254, 0.7) 100%);
+  border-style: solid;
+  border-width: 2px;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-raised);
 }
 
 /* 6. DATA TABLES (Premium Look) */
 .stDataFrame {
   border: none !important;
   box-shadow: var(--shadow-raised);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: white !important;
 }
 
-/* Custom Alertes Modernes */
+.stDataFrame table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.stDataFrame th {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  font-weight: 600 !important;
+  color: var(--slate-800) !important;
+  border-bottom: 2px solid var(--slate-200) !important;
+  padding: 1rem !important;
+}
+
+.stDataFrame td {
+  border-bottom: 1px solid var(--slate-100) !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.stDataFrame tr:hover {
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%) !important;
+}
+
+/* 7. TABS - Style Premium */
+.stTabs [data-baseweb="tab-list"] {
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%);
+  padding: 6px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.stTabs [data-baseweb="tab"] {
+  background: transparent !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 500;
+  color: var(--slate-700) !important;
+  transition: all 0.3s var(--bezier-smooth) !important;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%) !important;
+  transform: translateY(-1px);
+}
+
+.stTabs [aria-selected="true"] {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  box-shadow: var(--shadow-raised) !important;
+  color: var(--brand-primary) !important;
+  font-weight: 600;
+  border: 1px solid rgba(37, 99, 235, 0.1) !important;
+}
+
+/* 8. CUSTOM ALERTES MODERNES */
 [data-testid="stNotificationContentSuccess"] {
-  background-color: var(--success-bg) !important;
+  background: linear-gradient(135deg, var(--success-bg) 0%, rgba(240, 253, 244, 0.8) 100%) !important;
   color: var(--success-text) !important;
-  border: 1px solid #bcf0da !important;
-  border-left: 5px solid #16a34a !important;
+  border: 1px solid rgba(21, 128, 61, 0.2) !important;
+  border-left: 4px solid #16a34a !important;
+  border-radius: var(--radius-lg) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-flat);
 }
 
-/* 7. LOADING ANIMATION (Skeleton Pulse) */
+[data-testid="stNotificationContentError"] {
+  background: linear-gradient(135deg, var(--error-bg) 0%, rgba(254, 242, 242, 0.8) 100%) !important;
+  color: var(--error-text) !important;
+  border: 1px solid rgba(220, 38, 38, 0.2) !important;
+  border-left: 4px solid #dc2626 !important;
+  border-radius: var(--radius-lg) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-flat);
+}
+
+[data-testid="stNotificationContentWarning"] {
+  background: linear-gradient(135deg, var(--warning-bg) 0%, rgba(255, 251, 235, 0.8) 100%) !important;
+  color: var(--warning-text) !important;
+  border: 1px solid rgba(217, 119, 6, 0.2) !important;
+  border-left: 4px solid #d97706 !important;
+  border-radius: var(--radius-lg) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-flat);
+}
+
+/* 9. INPUTS & TEXT AREAS */
+.stTextInput > div > div,
+.stTextArea > div > div,
+.stNumberInput > div > div,
+.stSelectbox > div > div {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid var(--slate-200) !important;
+  border-radius: var(--radius-lg) !important;
+  transition: all 0.3s var(--bezier-smooth) !important;
+}
+
+.stTextInput > div > div:hover,
+.stTextArea > div > div:hover,
+.stNumberInput > div > div:hover,
+.stSelectbox > div > div:hover {
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.stTextInput > div > div:focus-within,
+.stTextArea > div > div:focus-within,
+.stNumberInput > div > div:focus-within,
+.stSelectbox > div > div:focus-within {
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* 10. CHECKBOXES & RADIO BOUTONS */
+.stCheckbox > label,
+.stRadio > label {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.7) 100%) !important;
+  border: 1px solid var(--slate-200) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.3s var(--bezier-smooth) !important;
+}
+
+.stCheckbox > label:hover,
+.stRadio > label:hover {
+  border-color: var(--brand-primary) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-flat);
+}
+
+/* 11. SIDEBAR ÉLÉMENTS */
+[data-testid="stSidebar"] .stTextInput > div > div,
+[data-testid="stSidebar"] .stSelectbox > div > div {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* 12. LOADING ANIMATION (Skeleton Pulse Premium) */
 @keyframes skeleton-pulse {
-  0% { background-color: var(--slate-100); }
-  50% { background-color: var(--slate-200); }
-  100% { background-color: var(--slate-100); }
+  0% {
+    background: ²linear-gradient(90deg,
+      var(--slate-100) 0%,
+      var(--slate-200) 50%,
+      var(--slate-100) 100%
+    );
+    background-size: 200% 100%;
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .stSpinner > div {
   border-top-color: var(--brand-primary) !important;
+  border-width: 3px !important;
+  animation: spin 0.8s linear infinite !important;
 }
 
-/* 8. RESPONSIVE / CLEANUP */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 13. EXPANDERS */
+.streamlit-expanderHeader {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid var(--slate-200) !important;
+  border-radius: var(--radius-lg) !important;
+  font-weight: 600;
+  color: var(--slate-800) !important;
+  transition: all 0.3s var(--bezier-smooth) !important;
+}
+
+.streamlit-expanderHeader:hover {
+  border-color: var(--brand-primary) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-flat);
+}
+
+/* 14. HEADERS ET TITRES */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--slate-900) !important;
+}
+
+h2 {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem !important;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--brand-gradient);
+  border-radius: 2px;
+}
+
+/* 15. SIDEBAR HEADER */
+[data-testid="stSidebar"] h3 {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.25rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* 16. RESPONSIVE / CLEANUP */
 @media (max-width: 768px) {
+  .main-header {
+    font-size: 2.5rem;
+  }
+
   [data-testid="stMetric"] {
     margin-bottom: 1rem;
+  }
+
+  [data-testid="stSidebar"] {
+    width: 280px !important;
   }
 }
 
 /* Masquer les bordures inutiles de Streamlit */
 [data-testid="stHeader"] {
-  background: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--slate-200);
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-gradient);
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-gradient-dark);
+}
+
+/* Amélioration des badges et indicateurs */
+.stBadge {
+  background: var(--brand-gradient) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-full) !important;
+  padding: 0.25rem 0.75rem !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.05em;
+}
+
+/* Footer amélioré */
+footer {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  border-top: 1px solid rgba(226, 232, 240, 0.5);
+  padding: 2rem 0 !important;
+  color: var(--slate-600) !important;
+  font-size: 0.875rem !important;
+}
+
+/* Effets de glow subtils */
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::after {
+  opacity: 1;
+}
+
+/* Animation d'entrée pour les éléments */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stMetric, .stDataFrame, .stTabs, .streamlit-expander {
+  animation: fadeInUp 0.5s var(--bezier-smooth) forwards;
 }
