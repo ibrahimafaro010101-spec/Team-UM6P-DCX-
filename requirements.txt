@@ -146,14 +146,7 @@ xgboost>=1.7.0
 # TESTING & DEVELOPMENT
 # ------------------------------
 
-pytest>=8.0.0
-# Framework de test principal
 
-pytest-cov>=4.1.0
-# Couverture de code
-
-pytest-mock>=3.11.0
-# Mocking pour les tests
 
 # ... (le reste de vos dépendances existantes)
 
@@ -165,3 +158,4 @@ streamlit>=1.28.0
 python-dotenv>=1.0.0
 
 # ... (etc.)
+
