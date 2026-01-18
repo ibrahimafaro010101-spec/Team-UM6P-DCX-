@@ -137,3 +137,31 @@ xgboost>=1.7.0
 
 # catboost>=1.2.0
 # Modèle performant mais souvent instable à installer sous Windows (optionnel)
+
+# ============================================
+# requirements.txt — LIK Insurance Analyst
+# ============================================
+
+# ------------------------------
+# TESTING & DEVELOPMENT
+# ------------------------------
+
+pytest>=8.0.0
+# Framework de test principal
+
+pytest-cov>=4.1.0
+# Couverture de code
+
+pytest-mock>=3.11.0
+# Mocking pour les tests
+
+# ... (le reste de vos dépendances existantes)
+
+# ------------------------------
+# INTERFACE & APPLICATION
+# ------------------------------
+
+streamlit>=1.28.0
+python-dotenv>=1.0.0
+
+# ... (etc.)
